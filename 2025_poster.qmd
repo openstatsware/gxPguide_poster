@@ -1,7 +1,7 @@
 ---
 title: "openstatsguide's Checklist for good statistical software packages"
 subtitle: " Developers Value Tests For Software Longevity "
-author: "Alessandro Gasparini, Daniel Sabanés Bové, Nils Penard, Audrey Yeo Te-ying"
+author: "Alessandro Gasparini, Daniel Sabanés Bové, Nils Penard, Audrey Yeo Te-ying on behalf of openstatsware"
 nocite: |
   @*
 format:
@@ -60,18 +60,6 @@ This guide primarily addresses developers of statistical packages. Users interes
 3. Add **code comments for ambiguous or complex pieces of internal code**.
 :::
 
-::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
-
-# *Functions*
-
-… should be short, simple and enforce argument types with assertions.
-
-
-1. **Write short functions** for a single and well defined purpose, with few arguments.
-2. Use type hints declaring which arguments expect which type of input. {roxytypes}
-3. **Enforce types and other expected properties** of function arguments with assertions. {`checkmate`}
-:::
-
 ::: {.block fill=rgb("#F4F8D3") inset="25pt" radius="40pt"}
 
 # *Vignettes*
@@ -84,18 +72,6 @@ This guide primarily addresses developers of statistical packages. Users interes
 3. Host your vignettes on a dedicated website. {`pkgdown`}
 :::
 
-::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
-
-# *Style*
-
-… should be language idiomatic and enforced by style checks.
-
-
-1. Use language idiomatic code and **follow the “clean code” rules**.
-2. Use a formatting tool to automate code formatting. {`styler`}
-3. **Use a style checking tool** to enforce a consistent and readable code style. {`lintr`}
-:::
-
 ::: {.block fill=rgb("#F4F8D3") inset="25pt" radius="40pt"}
 
 # *Test*
@@ -106,6 +82,30 @@ This guide primarily addresses developers of statistical packages. Users interes
 1. **Write unit tests** for all functions/ classes in your package (“white box” testing). 
 2. **Write functional tests** for your user API (“black box” testing). {testthat}
 3. In addition, **ensure good coverage** of your code with your tests as a final check. {covr}
+:::
+
+::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
+
+# *Functions*
+
+… should be short, simple and enforce argument types with assertions.
+
+
+1. **Write short functions** for a single and well defined purpose, with few arguments.
+2. Use type hints declaring which arguments expect which type of input. {roxytypes}
+3. **Enforce types and other expected properties** of function arguments with assertions. {`checkmate`}
+:::
+
+::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
+
+# *Style*
+
+… should be language idiomatic and enforced by style checks.
+
+
+1. Use language idiomatic code and **follow the “clean code” rules**.
+2. Use a formatting tool to automate code formatting. {`styler`}
+3. **Use a style checking tool** to enforce a consistent and readable code style. {`lintr`}
 :::
 
 ::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
