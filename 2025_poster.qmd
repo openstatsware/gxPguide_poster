@@ -1,11 +1,13 @@
 ---
 title: "openstatsguide's Checklist for good statistical software packages"
-subtitle: " 'Developers Value Tests For Software Longevity!' "
+subtitle: " Developers Value Tests For Software Longevity "
 author: "Alessandro Gasparini, Daniel Sabanés Bové, Nils Penard, Audrey Yeo Te-ying"
+nocite: |
+  @*
 format:
   typst:
     fig-format: "png"
-    fontsize: 7.5pt
+    fontsize: 8pt
     mainfont: "Helvetica Neue"
     size: "33.1x46.8" 
     margin:
@@ -29,6 +31,7 @@ format:
 ---
 
 ::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
+
 # Scope
 
 
@@ -47,7 +50,8 @@ This guide primarily addresses developers of statistical packages. Users interes
 :::
 
 ::: {.block fill=rgb("#F4F8D3") inset="25pt" radius="40pt"}
-## Documentation
+
+# Documentation
 
 … is important for both users and developers to understand all objects in your package, without reading and interpreting the underlying source code.
 
@@ -56,10 +60,9 @@ This guide primarily addresses developers of statistical packages. Users interes
 3. Add **code comments for ambiguous or complex pieces of internal code**.
 :::
 
-
-
 ::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
-## Functions
+
+# Functions
 
 … should be short, simple and enforce argument types with assertions.
 
@@ -70,20 +73,20 @@ This guide primarily addresses developers of statistical packages. Users interes
 :::
 
 ::: {.block fill=rgb("#F4F8D3") inset="25pt" radius="40pt"}
-## Vignettes
+
+# Vignettes
 
 … provide a comprehensive and long-form overview of your package’s functionality from a user point of view.
 
 
 1. **Provide an introduction vignette** that opens up the package to new users.
 2. Include deep dive vignettes, including describing statistical methodology.
-
-## Vignettes (continued)
 3. Host your vignettes on a dedicated website. {`pkgdown`}
 :::
 
 ::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
-## Style
+
+# Style
 
 … should be language idiomatic and enforced by style checks.
 
@@ -94,7 +97,8 @@ This guide primarily addresses developers of statistical packages. Users interes
 :::
 
 ::: {.block fill=rgb("#F4F8D3") inset="25pt" radius="40pt"}
-## Test
+
+# Test
 
 … are a fundamental safety net and development tool to ensure that your package works as expected, as you develop and use it.
 
@@ -105,7 +109,8 @@ This guide primarily addresses developers of statistical packages. Users interes
 :::
 
 ::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
-## Lifecycle
+
+# Lifecycle
 
 … management is crucial to build up your user base in a sustainable way.
 Life cycle management is simplified by reducing dependencies, and should comprise a central code repository.
@@ -121,6 +126,4 @@ Life cycle management is simplified by reducing dependencies, and should compris
 4.  Use a **central repository** for version control and publication of a **contributing guide** to enable community contributions.
 
 :::
-
-## References
 
