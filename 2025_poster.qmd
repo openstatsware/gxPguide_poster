@@ -32,7 +32,7 @@ format:
 
 ::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
 
-# Scope
+# *Scope*
 
 
 We encourage developers of statistical software packages to follow this minimum set of good practices around:
@@ -51,7 +51,7 @@ This guide primarily addresses developers of statistical packages. Users interes
 
 ::: {.block fill=rgb("#F4F8D3") inset="25pt" radius="40pt"}
 
-# Documentation
+# *Documentation*
 
 … is important for both users and developers to understand all objects in your package, without reading and interpreting the underlying source code.
 
@@ -62,7 +62,7 @@ This guide primarily addresses developers of statistical packages. Users interes
 
 ::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
 
-# Functions
+# *Functions*
 
 … should be short, simple and enforce argument types with assertions.
 
@@ -74,7 +74,7 @@ This guide primarily addresses developers of statistical packages. Users interes
 
 ::: {.block fill=rgb("#F4F8D3") inset="25pt" radius="40pt"}
 
-# Vignettes
+# *Vignettes*
 
 … provide a comprehensive and long-form overview of your package’s functionality from a user point of view.
 
@@ -86,7 +86,7 @@ This guide primarily addresses developers of statistical packages. Users interes
 
 ::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
 
-# Style
+# *Style*
 
 … should be language idiomatic and enforced by style checks.
 
@@ -98,7 +98,7 @@ This guide primarily addresses developers of statistical packages. Users interes
 
 ::: {.block fill=rgb("#F4F8D3") inset="25pt" radius="40pt"}
 
-# Test
+# *Test*
 
 … are a fundamental safety net and development tool to ensure that your package works as expected, as you develop and use it.
 
@@ -110,7 +110,7 @@ This guide primarily addresses developers of statistical packages. Users interes
 
 ::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
 
-# Lifecycle
+# *Lifecycle*
 
 … management is crucial to build up your user base in a sustainable way.
 Life cycle management is simplified by reducing dependencies, and should comprise a central code repository.
