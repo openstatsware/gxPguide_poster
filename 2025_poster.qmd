@@ -1,18 +1,18 @@
 ---
-title: "openstatsguide's Checklist for good statistical software packages"
-subtitle: " Developers Value Tests For Software Longevity "
-author: "Alessandro Gasparini, Daniel Sabanés Bové, Nils Penard, Audrey Yeo Te-ying on behalf of openstatsware"
+title: "openstatsguide: Checklist for Good Statistical Software Packages"
+subtitle: "Developers Value Tests For Software Longevity"
+author: "Alessandro Gasparini, Daniel Sabanés Bové, Nils Penard, Audrey Yeo Te-ying, on behalf of openstatsware"
 nocite: |
   @*
 format:
   typst:
     fig-format: "png"
-    fontsize: 8pt
-    mainfont: "Helvetica Neue"
-    size: "33.1x46.8" 
+    fontsize: 34pt
+    mainfont: "Inter"
+    papersize: a0
     margin:
-      x: 0.4cm
-      y: 0.5cm
+      x: 2.5cm
+      y: 5.0cm
     columns: 2
     knitr:
       opts_chunk:
@@ -20,20 +20,23 @@ format:
     include-before-body:
       - text: |
           #show heading: set text(navy)
+          #show raw: set text(font: "Fira Code")
+          #show raw: set text(size: 36pt)
     include-in-header:
       text: |
         #set page(
           footer: [
-          #set text(9pt)
+          #set text(30pt)
             #link("mailto:")
           ]
         )
+editor:
+  render-on-save: true
 ---
 
-::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
+::: {.block fill=rgb("#FFCC00") inset="50pt" radius="40pt"}
 
 # *Scope*
-
 
 We encourage developers of statistical software packages to follow this minimum set of good practices around:
 
@@ -45,22 +48,24 @@ These keywords can be easily remembered with the mnemonic bridge sentence:
 
 While the recommendations are rather generic, we focus on functional programming languages and give links to implementations in R, Python and Julia.
 
-This guide primarily addresses developers of statistical packages. Users interested in assessing the quality of existing statistical packages will find complementary "validation" focused resources valuable, as listed in References.
+This guide primarily addresses developers of statistical packages.
+Users interested in assessing the quality of existing statistical packages will find complementary "validation"-focused resources on the guide website.
 
 :::
 
-::: {.block fill=rgb("#F4F8D3") inset="25pt" radius="40pt"}
+::: {.block fill=rgb("#F4F8D3") inset="40pt" radius="40pt"}
 
 # *Documentation*
 
 … is important for both users and developers to understand all objects in your package, without reading and interpreting the underlying source code.
 
-1. Use in-line comments to generate their corresponding documentation. {roxygen2}
+1. Use in-line comments to generate their corresponding documentation. {`roxygen2`}
 2. Do also **document internal functions and classes**.
 3. Add **code comments for ambiguous or complex pieces of internal code**.
+
 :::
 
-::: {.block fill=rgb("#F4F8D3") inset="25pt" radius="40pt"}
+::: {.block fill=rgb("#FFCC00") inset="40pt" radius="40pt"}
 
 # *Vignettes*
 
@@ -70,60 +75,63 @@ This guide primarily addresses developers of statistical packages. Users interes
 1. **Provide an introduction vignette** that opens up the package to new users.
 2. Include deep dive vignettes, including describing statistical methodology.
 3. Host your vignettes on a dedicated website. {`pkgdown`}
+
 :::
 
-::: {.block fill=rgb("#F4F8D3") inset="25pt" radius="40pt"}
+::: {.block fill=rgb("#F4F8D3") inset="40pt" radius="40pt"}
 
 # *Test*
 
 … are a fundamental safety net and development tool to ensure that your package works as expected, as you develop and use it.
 
-
-1. **Write unit tests** for all functions/ classes in your package (“white box” testing). 
+1. **Write unit tests** for all functions/ classes in your package (“white box” testing).
 2. **Write functional tests** for your user API (“black box” testing). {testthat}
 3. In addition, **ensure good coverage** of your code with your tests as a final check. {covr}
+
 :::
 
-::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
+::: {.block fill=rgb("#FFCC00") inset="40pt" radius="40pt"}
 
 # *Functions*
 
 … should be short, simple and enforce argument types with assertions.
 
-
 1. **Write short functions** for a single and well defined purpose, with few arguments.
 2. Use type hints declaring which arguments expect which type of input. {roxytypes}
 3. **Enforce types and other expected properties** of function arguments with assertions. {`checkmate`}
+
 :::
 
-::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
+::: {.block fill=rgb("#F4F8D3") inset="40pt" radius="40pt"}
 
 # *Style*
 
 … should be language idiomatic and enforced by style checks.
 
-
 1. Use language idiomatic code and **follow the “clean code” rules**.
 2. Use a formatting tool to automate code formatting. {`styler`}
 3. **Use a style checking tool** to enforce a consistent and readable code style. {`lintr`}
+
 :::
 
-::: {.block fill=rgb("#FFCC00") inset="25pt" radius="40pt"}
+::: {.block fill=rgb("#FFCC00") inset="40pt" radius="40pt"}
 
 # *Lifecycle*
 
 … management is crucial to build up your user base in a sustainable way.
 Life cycle management is simplified by reducing dependencies, and should comprise a central code repository.
 
-
 1.  Reduce dependencies to simplify maintenance of your own package and depend on other packages that you trust and deem stable enough.
-
-
 2. **Track dependencies and pin their versions** to produce consistent results and behaviours by using more system level that serves as a source of truth for all packages developers.
-
-3.  Maintain the change log and deprecate functionality before deleting it. 
-
+3.  Maintain the change log and deprecate functionality before deleting it.
 4.  Use a **central repository** for version control and publication of a **contributing guide** to enable community contributions.
 
 :::
 
+::: {.block fill=rgb("#FFFFFF") inset="40pt" radius="40pt"}
+
+# Scan the QR code to read the online version of openstatsguide:
+
+![](qr-code.svg){width=50% fig-align="center"}
+
+:::
