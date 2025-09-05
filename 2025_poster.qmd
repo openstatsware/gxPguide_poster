@@ -81,7 +81,7 @@ Users interested in assessing the quality of existing statistical packages will 
 
 
 1. **Provide an introduction vignette** that opens up the package to new users.
-2. Include deep dive vignettes, including describing statistical methodology.
+2. Include deep-dive vignettes, including describing statistical methodology.
 3. Host your vignettes on a dedicated website. {`pkgdown`}
 
 :::
@@ -145,3 +145,4 @@ Scan the QR code to read the online version of openstatsguide:
 ![](images/qr-code.svg){width=20% fig-align="center"}
 
 :::
+
