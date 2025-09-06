@@ -8,10 +8,12 @@ format:
   typst:
     background: #D0F0C0
     fig-format: "png"
-    fontsize: 34pt
+    fontsize: 35pt
     mainfont: "Inter"
     font-paths: 
-    - "fonts"
+    - "fonts/Fira_Code,Inter"
+    typst-font-paths: 
+    - "fonts/Fira_Code,Inter"
     papersize: a0
     margin:
       x: 2.5cm
@@ -27,24 +29,25 @@ format:
             text(font: "Fira Code", weight: "black", size: 50pt)[#title]
           }
           #show: author => {
-            text(font: "Inter", size: 32pt)[#author]
+            text(font: "Inter", size: 32pt, weight: "bold")[#author]
           }
+          #set text(font: "Inter")
           #show bibliography: set text(size: 18pt)
           #set bibliography(title: [References])
 editor:
   render-on-save: true
 ---
 
-::: {style="display:none"}
+::: {.content-hidden when-format="typst"}
 @ropensci_statsoftware_2021 @ropensci_devguide_2024 @pharmar_2020 @usethis_2024
 @wickham_2023 @wickham_design @carpentries_2023 @gswe4rp_2024 @validation_2024
 @sabanes_2023
 :::
 
 
-::: {.block fill=rgb("#FFCC00") inset="50pt" radius="40pt"}
+::: {.block fill=rgb("#FFCC00") inset="35pt" radius="40pt"}
 
-# ![](images/scope.svg){width=20% fig-align="center"} *Scope*
+# ![](images/scope.svg){width=15% fig-align="center"} *Scope*
 
 We encourage developers of statistical software packages to follow this minimum set of good practices around:
 
@@ -63,24 +66,24 @@ Users interested in assessing the quality of existing statistical packages will 
 
 ::: {.block fill=rgb("#F4F8D3") inset="40pt" radius="40pt"}
 
-# ![](images/documentation.svg){width=15% fig-align="center"} *Documentation*
+# ![](images/documentation.svg){width=9% fig-align="center"} *Documentation*
 
 … is important for both users and developers to understand all objects in your package, without reading and interpreting the underlying source code.
 
 1. Use in-line comments to generate their corresponding documentation. {`roxygen2`}
-2. Do also **document internal functions and classes**.
-3. Add **code comments for ambiguous or complex pieces of internal code**.
+2. Do also document internal functions and classes.
+3. Add code comments for ambiguous or complex pieces of internal code.
 
 :::
 
 ::: {.block fill=rgb("#FFCC00") inset="40pt" radius="40pt"}
 
-#  ![](images/vignettes.svg){width=13% fig-align="center"} *Vignettes*
+#  ![](images/vignettes.svg){width=10% fig-align="center"} *Vignettes*
 
 … provide a comprehensive and long-form overview of your package’s functionality from a user point of view.
 
 
-1. **Provide an introduction vignette** that opens up the package to new users.
+1. Provide an introduction vignette that opens up the package to new users.
 2. Include deep-dive vignettes, including describing statistical methodology.
 3. Host your vignettes on a dedicated website. {`pkgdown`}
 
@@ -88,51 +91,51 @@ Users interested in assessing the quality of existing statistical packages will 
 
 ::: {.block fill=rgb("#F4F8D3") inset="40pt" radius="40pt"}
 
-# ![](images/tests.svg){width=18% fig-align="center"} *Tests*
+# ![](images/tests.svg){width=15% fig-align="center"} *Tests*
 
 … are a fundamental safety net and development tool to ensure that your package works as expected, as you develop and use it.
 
-1. **Write unit tests** for all functions/ classes in your package (“white box” testing).
-2. **Write functional tests** for your user API (“black box” testing). {testthat}
-3. In addition, **ensure good coverage** of your code with your tests as a final check. {covr}
+1. Write unit tests for all functions/ classes in your package (“white box” testing).
+2. Write functional tests for your user API (“black box” testing). {testthat}
+3. In addition, ensure good coverage of your code with your tests as a final check. {covr}
 
 :::
 
 ::: {.block fill=rgb("#FFCC00") inset="40pt" radius="40pt"}
 
-# ![](images/function.svg){width=15% fig-align="center"} *Functions*
+# ![](images/function.svg){width=10% fig-align="center"} *Functions*
 
 … should be short, simple and enforce argument types with assertions.
 
-1. **Write short functions** for a single and well defined purpose, with few arguments.
+1. Write short functions for a single and well defined purpose, with few arguments.
 2. Use type hints declaring which arguments expect which type of input. {roxytypes}
-3. **Enforce types and other expected properties** of function arguments with assertions. {`checkmate`}
+3. Enforce types and other expected properties of function arguments with assertions. {`checkmate`}
 
 :::
 
 ::: {.block fill=rgb("#F4F8D3") inset="40pt" radius="40pt"}
 
-# ![](images/style.svg){width=18% fig-align="center"} *Style*
+# ![](images/style.svg){width=13% fig-align="center"} *Style*
 
 … should be language idiomatic and enforced by style checks.
 
-1. Use language idiomatic code and **follow the “clean code” rules**.
+1. Use language idiomatic code and follow the “clean code” rules.
 2. Use a formatting tool to automate code formatting. {`styler`}
-3. **Use a style checking tool** to enforce a consistent and readable code style. {`lintr`}
+3. Use a style checking tool to enforce a consistent and readable code style. {`lintr`}
 
 :::
 
 ::: {.block fill=rgb("#FFCC00") inset="40pt" radius="40pt"}
 
-# ![](images/lifecycle.svg){width=15% fig-align="center"} *Lifecycle*
+# ![](images/lifecycle.svg){width=10% fig-align="center"} *Lifecycle*
 
 … management is crucial to build up your user base in a sustainable way.
 Life cycle management is simplified by reducing dependencies, and should comprise a central code repository.
 
 1.  Reduce dependencies to simplify maintenance of your own package and depend on other packages that you trust and deem stable enough.
-2. **Track dependencies and pin their versions** to produce consistent results and behaviours by using more system level that serves as a source of truth for all packages developers.
+2. Track dependencies and pin their versions to produce consistent results and behaviours by using more system level that serves as a source of truth for all packages developers.
 3.  Maintain the change log and deprecate functionality before deleting it.
-4.  Use a **central repository** for version control and publication of a **contributing guide** to enable community contributions.
+4.  Use a central repository for version control and publication of a contributing guide to enable community contributions.
 
 :::
 
@@ -143,7 +146,6 @@ Scan the QR code to read the online version of openstatsguide:
 ![](images/qr-code.svg){width=20% fig-align="center"}
 
 :::
-
 
 
 
