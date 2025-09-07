@@ -6,7 +6,7 @@ bibliography: references.bib
 mainfont: "Inter"
 format:
   typst:
-    background: #D0F0C0
+    background: "rgb(#D0F0C0)"
     fig-format: "png"
     fontsize: 35pt
     mainfont: "Inter"
@@ -96,8 +96,8 @@ Users interested in assessing the quality of existing statistical packages will 
 … are a fundamental safety net and development tool to ensure that your package works as expected, as you develop and use it.
 
 1. Write unit tests for all functions/ classes in your package (“white box” testing).
-2. Write functional tests for your user API (“black box” testing). {testthat}
-3. In addition, ensure good coverage of your code with your tests as a final check. {covr}
+2. Write functional tests for your user API (“black box” testing). {`testthat`}
+3. In addition, ensure good coverage of your code with your tests as a final check. {`covr`}
 
 :::
 
@@ -108,7 +108,7 @@ Users interested in assessing the quality of existing statistical packages will 
 … should be short, simple and enforce argument types with assertions.
 
 1. Write short functions for a single and well defined purpose, with few arguments.
-2. Use type hints declaring which arguments expect which type of input. {roxytypes}
+2. Use type hints declaring which arguments expect which type of input. {`roxytypes`}
 3. Enforce types and other expected properties of function arguments with assertions. {`checkmate`}
 
 :::
@@ -139,6 +139,8 @@ Life cycle management is simplified by reducing dependencies, and should compris
 
 :::
 
+# References
+
 ::: {.block fill=rgb("#FFFFFF") inset="40pt" radius="40pt"}
 
 Scan the QR code to read the online version of openstatsguide:
@@ -146,6 +148,7 @@ Scan the QR code to read the online version of openstatsguide:
 ![](images/qr-code.svg){width=20% fig-align="center"}
 
 :::
+
 
 
 
